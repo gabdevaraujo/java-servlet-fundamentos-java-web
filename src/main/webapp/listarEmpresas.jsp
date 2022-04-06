@@ -17,7 +17,11 @@
 	<h2>Empresas:</h2>
 		<ul class="list-group list-group-flush">
 			<c:forEach items="${ empresas }" var="empresa">
-				<li class="list-group-item">${ empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/> </li>
+				<li class="list-group-item">${ empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/>
+				<a href="/gerenciador/mostraempresa?id=${ empresa.id }" class="btn btn-warning">Editar</a>
+				<a href="/gerenciador/removerempresa?id=${ empresa.id }" class="btn btn-danger">Remover</a>
+				</li>
+				
 			</c:forEach>
 		</ul>	
 	</div>

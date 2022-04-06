@@ -18,7 +18,7 @@ import br.com.alura.gerenciador.servlet.modelo.Empresa;
 
 
 @WebServlet("/novaempresa")
-public class NovaEmpresa extends HttpServlet {
+public class NovaEmpresaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -47,10 +47,12 @@ public class NovaEmpresa extends HttpServlet {
 		Banco banco = new Banco();
 		banco.addEmpresa(empresa);
 		
+		response.sendRedirect("listarempresas");
+		
 		//Chamar o JSP
-		RequestDispatcher rd = request.getRequestDispatcher("novaEmpresaCriada.jsp");
-		request.setAttribute("empresa", empresa);
-		rd.forward(request, response);
+//		RequestDispatcher rd = request.getRequestDispatcher("/listarempresas");
+//		request.setAttribute("empresa", empresa);
+//		rd.forward(request, response);
 	}
 
 }
